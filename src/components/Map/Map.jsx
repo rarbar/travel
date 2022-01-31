@@ -18,11 +18,18 @@ const Map = ({
   const classes = useStyles();
   const matches = useMediaQuery("(min-width:600px)");
 
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: yourKey }}
-        defaultCenter={coords}
+        defaultCenter={defaultProps.center}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
         options={{
